@@ -7,10 +7,12 @@ public class Rocket : MonoBehaviour
     [SerializeField] float speedRocket = 2f;
     [SerializeField] float speedRotation = 5f;
     Rigidbody myrg;
+    AudioSource myaudio;
     // Start is called before the first frame update
     void Start()
     {
         myrg = GetComponent<Rigidbody>();
+        myaudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,15 @@ public class Rocket : MonoBehaviour
         {
             // myrg.AddRelativeForce(Vector3.up); // Vector3.up means it changes Vector3 position only for y(0, 1, 0)
             myrg.AddRelativeForce(0, speedRocket * Time.deltaTime, 0);
+            if (!myaudio.isPlaying)
+            {
+                myaudio.Play();
+            }
  
+        }
+        else
+        {
+            myaudio.Stop();
         }
 
     }
@@ -49,4 +59,5 @@ public class Rocket : MonoBehaviour
         transform.Rotate(Vector3.forward * wayRotation * Time.deltaTime);
         myrg.freezeRotation = false;
     }
+
 }
