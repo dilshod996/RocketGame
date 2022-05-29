@@ -7,7 +7,15 @@ public class Crashed : MonoBehaviour
 {
     // [SerializeField] gameObject destroyFuel;
     [SerializeField] float delayedTime= 1f;
+    [SerializeField] AudioClip crashedSound;
+    [SerializeField] AudioClip succesSound;
     Rocket myrocket;
+    AudioSource myaudio;
+    void Start() {
+        myrocket = GetComponent<Rocket>();
+        myaudio = GetComponent<AudioSource>();
+
+    }
     // void DestroyObjectDelayed() {
     //     Destroy(gameObject, delayedTime);
     // }
@@ -19,23 +27,24 @@ public class Crashed : MonoBehaviour
                 Debug.Log("Lets start the game");
                 break;
             case "Finish":
-                Debug.Log("You finished");
-                ComingBackFirstSCene();  
+                Invoke("NextScene", delayedTime);
+                myrocket.enabled = false;
+                myaudio.PlayOneShot(succesSound, 1f);
                 break; 
             case "Fuel":
                 Debug.Log("You picked up fuel");
                 // DestroyObjectDelayed();
                 break;
             default:
-                Debug.Log("Please dont touch me");
-                Invoke("NextScene", delayedTime);
-                GetComponent<Rocket>().enabled = false;
-                GetComponent<AudioSource>().enabled = false;
+                Invoke("LoadAgainTheScene", delayedTime);
+                myaudio.PlayOneShot(crashedSound, 1f);
+                myrocket.enabled = false;
+                
                 break;
 
         }
     }
-    void ComingBackFirstSCene(){
+    void NextScene(){
         int indexScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = indexScene + 1;
         if (nextScene == SceneManager.sceneCountInBuildSettings)
@@ -44,7 +53,7 @@ public class Crashed : MonoBehaviour
         }
         SceneManager.LoadScene(nextScene);
     }
-    void NextScene()
+    void LoadAgainTheScene()
     {
         int indexScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(indexScene);
