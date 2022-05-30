@@ -9,7 +9,8 @@ public class Crashed : MonoBehaviour
     [SerializeField] float delayedTime= 1f;
     [SerializeField] AudioClip crashedSound;
     [SerializeField] AudioClip succesSound;
-    [SerializeField] gameObject deathObject;
+    [SerializeField] ParticleSystem succesParticles;
+    [SerializeField] ParticleSystem crashParticles;
     bool isTransitioning = false;
     Rocket myrocket;
     AudioSource myaudio;
@@ -63,6 +64,7 @@ public class Crashed : MonoBehaviour
         Invoke("NextScene", delayedTime);
         myrocket.enabled = false;
         myaudio.PlayOneShot(succesSound);
+        succesParticles.Play();
        
     }
     void GameOver()
@@ -71,6 +73,7 @@ public class Crashed : MonoBehaviour
         myaudio.Stop();
         Invoke("LoadAgainTheScene", delayedTime);
         myaudio.PlayOneShot(crashedSound);
+        crashParticles.Play();
         myrocket.enabled = false;
         
         

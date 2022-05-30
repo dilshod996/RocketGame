@@ -7,7 +7,6 @@ public class Rocket : MonoBehaviour
     [SerializeField] float speedRocket = 2f;
     [SerializeField] float speedRotation = 5f;
     [SerializeField] AudioClip engineSound;
-
     Rigidbody myrg;
     AudioSource myaudio;
     // Start is called before the first frame update
