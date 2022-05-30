@@ -507,22 +507,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1212878543, guid: 4ea53e105e826794198a332483e70edd, type: 3}
-      propertyPath: succesSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e9458e784457287499e316826482190f, type: 3}
-    - target: {fileID: 1212878543, guid: 4ea53e105e826794198a332483e70edd, type: 3}
-      propertyPath: crashedSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a31e514620e736948a35a6672e418fe9, type: 3}
-    - target: {fileID: 7646038623149291056, guid: 4ea53e105e826794198a332483e70edd, type: 3}
-      propertyPath: succesSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e9458e784457287499e316826482190f, type: 3}
-    - target: {fileID: 7646038623149291056, guid: 4ea53e105e826794198a332483e70edd, type: 3}
-      propertyPath: crashedSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a31e514620e736948a35a6672e418fe9, type: 3}
     - target: {fileID: 7646038623149291058, guid: 4ea53e105e826794198a332483e70edd, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -571,7 +555,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5983163689301770717, guid: 4ea53e105e826794198a332483e70edd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ea53e105e826794198a332483e70edd, type: 3}
 --- !u!1001 &8577446982582720275
 PrefabInstance:

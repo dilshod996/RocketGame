@@ -31,13 +31,14 @@ public class Rocket : MonoBehaviour
             myrg.AddRelativeForce(0, speedRocket * Time.deltaTime, 0);
             if (!myaudio.isPlaying)
             {
-                myaudio.PlayOneShot(engineSound, 1f);
+                myaudio.PlayOneShot(engineSound);
             }
  
         }
         else
         {
             myaudio.Stop();
+            
         }
 
     }

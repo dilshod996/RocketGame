@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a1013c68dedd8429e8b3e83808551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayedTime: 5
+  delayedTime: 3
   crashedSound: {fileID: 8300000, guid: a31e514620e736948a35a6672e418fe9, type: 3}
   succesSound: {fileID: 8300000, guid: e9458e784457287499e316826482190f, type: 3}
 --- !u!82 &9128354887985124675
