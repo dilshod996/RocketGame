@@ -11,6 +11,8 @@ public class Crashed : MonoBehaviour
     [SerializeField] AudioClip succesSound;
     [SerializeField] ParticleSystem succesParticles;
     [SerializeField] ParticleSystem crashParticles;
+
+
     bool isTransitioning = false;
     Rocket myrocket;
     AudioSource myaudio;

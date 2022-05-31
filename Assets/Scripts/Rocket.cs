@@ -7,6 +7,9 @@ public class Rocket : MonoBehaviour
     [SerializeField] float speedRocket = 2f;
     [SerializeField] float speedRotation = 5f;
     [SerializeField] AudioClip engineSound;
+    [SerializeField] ParticleSystem rocketLeftParticles;
+    [SerializeField] ParticleSystem rocketRightParticles;
+    [SerializeField] ParticleSystem rocketJetParticles;
     Rigidbody myrg;
     AudioSource myaudio;
     // Start is called before the first frame update
@@ -31,12 +34,19 @@ public class Rocket : MonoBehaviour
             if (!myaudio.isPlaying)
             {
                 myaudio.PlayOneShot(engineSound);
+                
             }
+            if (!rocketJetParticles.isPlaying)
+            {
+                rocketJetParticles.Play();
+            }
+            
  
         }
         else
         {
             myaudio.Stop();
+            rocketJetParticles.Stop();
             
         }
 
@@ -46,12 +56,26 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             ChangeRotation(speedRotation);
+            if (!rocketLeftParticles.isPlaying)
+            {
+                rocketLeftParticles.Play();
+            }
+            
 
         }
         else if (Input.GetKey(KeyCode.D))
         {
             ChangeRotation(-speedRotation);
+            if (!rocketRightParticles.isPlaying)
+            {
+                rocketRightParticles.Play();
+            }
+            
 
+        }
+        else {
+            rocketLeftParticles.Stop();
+            rocketRightParticles.Stop();
         }
     }
 
