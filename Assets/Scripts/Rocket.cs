@@ -30,6 +30,17 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             // myrg.AddRelativeForce(Vector3.up); // Vector3.up means it changes Vector3 position only for y(0, 1, 0)
+           FlyingRocket();
+        }
+        else
+        {
+            myaudio.Stop();
+            rocketJetParticles.Stop();
+            
+        }
+
+    }
+    void FlyingRocket(){
             myrg.AddRelativeForce(0, speedRocket * Time.deltaTime, 0);
             if (!myaudio.isPlaying)
             {
@@ -40,42 +51,36 @@ public class Rocket : MonoBehaviour
             {
                 rocketJetParticles.Play();
             }
-            
- 
-        }
-        else
-        {
-            myaudio.Stop();
-            rocketJetParticles.Stop();
-            
-        }
-
     }
     void ObjectPosition()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ChangeRotation(speedRotation);
-            if (!rocketLeftParticles.isPlaying)
-            {
-                rocketLeftParticles.Play();
-            }
-            
-
+            TurningToLeft();         
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ChangeRotation(-speedRotation);
-            if (!rocketRightParticles.isPlaying)
-            {
-                rocketRightParticles.Play();
-            }
-            
-
+            TurningToRight();
         }
         else {
             rocketLeftParticles.Stop();
             rocketRightParticles.Stop();
+        }
+    }
+    void TurningToLeft()
+    {
+        ChangeRotation(speedRotation);
+        if (!rocketLeftParticles.isPlaying)
+        {
+            rocketLeftParticles.Play();
+        }
+    }
+    void TurningToRight()
+    {
+        ChangeRotation(-speedRotation);
+        if (!rocketRightParticles.isPlaying)
+        {
+            rocketRightParticles.Play();
         }
     }
 

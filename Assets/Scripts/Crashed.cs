@@ -14,6 +14,7 @@ public class Crashed : MonoBehaviour
 
 
     bool isTransitioning = false;
+    bool collisiondisabled = false;
     Rocket myrocket;
     AudioSource myaudio;
     void Start() {
@@ -21,12 +22,29 @@ public class Crashed : MonoBehaviour
         myaudio = GetComponent<AudioSource>();
 
     }
+    void Update() 
+    {
+        RespondDebugKeys();
+    }
+    void RespondDebugKeys()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            NextScene();
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            collisiondisabled = !collisiondisabled; //it toggles collisions
+            Debug.Log("C key is pressed");
+        }
+        
+    }
     // void DestroyObjectDelayed() {
     //     Destroy(gameObject, delayedTime);
     // }
     void OnCollisionEnter(Collision other) {
         string tagName = other.gameObject.tag;
-        if (isTransitioning){ return; }
+        if (isTransitioning || collisiondisabled){ return; }
         switch (tagName)
         {
             case "Start":
@@ -45,7 +63,8 @@ public class Crashed : MonoBehaviour
 
         }
     }
-    void NextScene(){
+    void NextScene()
+    {
         int indexScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = indexScene + 1;
         if (nextScene == SceneManager.sceneCountInBuildSettings)
@@ -54,6 +73,7 @@ public class Crashed : MonoBehaviour
         }
         SceneManager.LoadScene(nextScene);
     }
+
     void LoadAgainTheScene()
     {
         int indexScene = SceneManager.GetActiveScene().buildIndex;
@@ -80,4 +100,5 @@ public class Crashed : MonoBehaviour
         
         
     }
+
 }
