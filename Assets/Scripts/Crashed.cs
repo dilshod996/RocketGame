@@ -63,7 +63,7 @@ public class Crashed : MonoBehaviour
 
         }
     }
-    void NextScene()
+    public void NextScene()
     {
         int indexScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = indexScene + 1;
