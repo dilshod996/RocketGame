@@ -119,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234288603}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.3, y: 2.21, z: 0.75}
+  m_LocalPosition: {x: 0.46, y: 1.641, z: -0.4}
   m_LocalScale: {x: 4.172386, y: 1.2870779, z: 3.309612}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -138,8 +138,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 40.01
-  m_Range: 2.24
+  m_Intensity: 34.17
+  m_Range: 6.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -500,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269109751975406462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 2.069, z: -0.347}
+  m_LocalPosition: {x: 0.53, y: 1.763, z: -0.347}
   m_LocalScale: {x: 0.6018795, y: 0.10492829, z: 0.45338944}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -987,8 +987,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4106826098309295787}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 1.6489999, z: -0.34}
-  m_LocalScale: {x: 0.37972042, y: 0.37594262, z: 0.27139962}
+  m_LocalPosition: {x: 0.53, y: 1.551, z: -0.34}
+  m_LocalScale: {x: 0.37972042, y: 0.23106185, z: 0.27139962}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7646038623149291068}
@@ -1365,6 +1365,7 @@ GameObject:
   - component: {fileID: 1212878536}
   - component: {fileID: 1212878543}
   - component: {fileID: 9128354887985124675}
+  - component: {fileID: 1550001320}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Player
@@ -1659,6 +1660,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1550001320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646038623149291058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caa581415b5c044fa02ed4ad567a584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8900377396302319564
 GameObject:
   m_ObjectHideFlags: 0
